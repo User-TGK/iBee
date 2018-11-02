@@ -1,0 +1,22 @@
+{% extends "layout.html"  %}
+{% block body %}
+<body class="body">
+	<a href="/">Home</a>		
+	<div class="Wrapper" align ="Center">
+		<form method="POST" >
+			<input type = "date" name = "start_date">
+			<input type = "date" name = "end_date">
+			<input type = "submit" name = "action" value="Selecteer een datum">
+			<br>
+			<br>
+			<input type = "submit" name = "action" value="vandaag">
+			<input type = "submit" name = "action" value="gisteren">
+			<input type = "submit" name = "action" value="vorige week">
+		</form>
+	</div>
+	<br>
+	<div class="graph" align="Center">
+		<embed src="{{graph_data|safe}}">
+	</div>
+</body>
+{% endblock %}

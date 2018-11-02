@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container">
+<header>Bijenkasten monitorsysteem</header>
+<nav>
+<ul>
+    {% for sensor_node in sensor_nodes %}
+    <div class="dropdown">
+            <button class="dropbtn">Bijenkast {{sensor_node.node_id}}</button>
+            <div class="dropdown-content">
+                    {% for quantity in quantities: %}
+                    <a href="graph/{{sensor_node.node_id}}/{{quantity[0]}}/">{{quantity[0]}}</a>
+                    {%endfor %}
+            </div>
+          </div>
+    {%endfor %} 
+</ul>
+</nav>
+<footer>iBee © 2017 - 2018</footer>
+</div>
+{% endblock %}
